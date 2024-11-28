@@ -22,7 +22,7 @@
 		</p>
 		<% var id=0; %>
 			<% for(var key in data) { %>
-				<%- include('data_item2', {id: ++id, key: key, val: data[key]}) %>
+				<%- include('data_item2', {id: ++id, key: key, val:[data[key]]}) %>
 					<% } %>
 	</div>
 </body>

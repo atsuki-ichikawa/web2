@@ -108,7 +108,7 @@ GitHubリポジトリをローカルにクローンする方法は以下の通�
 1. GitHubで対象のリポジトリを開
 2. 「Code」ボタンをクリック
 3. 表示されるURL（HTTPSかSSHのどちらか）をコピー
-   - HTTPSの場合の例: `https://github.com/username/repository-name.git`
+   - HTTPSの場合の例: `https://github.com/atsuki-ichikawa/web2.git`
    - SSHの場合の例: `git@github.com:username/repository-name.git`
 
 ---

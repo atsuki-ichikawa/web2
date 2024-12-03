@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&ast;&ast;&#x4e8b;&#x524d;&#x6e96;&#x5099;&ast;&ast;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <p>ローカルのディレクトリをGitHubに公開する手順</p>
+<hr>
+<h3 id="事前準備"><strong>事前準備</strong></h3>
+<ol>
+<li>
+<p><strong>Gitをインストール</strong></p>
+<ul>
+<li>まだインストールしていない場合は、<a href="https://git-scm.com/">Git公式サイト</a>からインストール</li>
+</ul>
+</li>
+<li>
+<p><strong>GitHubアカウント作成</strong></p>
+<ul>
+<li><a href="https://github.com/">GitHub</a>でアカウントを作成し、サインイン</li>
+</ul>
+</li>
+<li>
+<p><strong>GitHubリポジトリを作成</strong></p>
+<ul>
+<li>GitHubで新しいリポジトリを作成
+<ol>
+<li>サイト右上の「＋」アイコン → 「New repository」をクリック。</li>
+<li>リポジトリ名を入力（例: <code>my-project</code>）。</li>
+<li>必要に応じて説明を追加し、PublicかPrivateを選択。</li>
+<li>「Create repository」をクリック。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="ローカルディレクトリをgithubに公開する手順"><strong>ローカルディレクトリをGitHubに公開する手順</strong></h3>
+<ol>
+<li>
+<p><strong>ローカルディレクトリに移動</strong></p>
+<pre><code class="language-bash"><span class="hljs-built_in">cd</span> /path/to/your/local/directory
+</code></pre>
+</li>
+<li>
+<p><strong>Gitリポジトリを初期化</strong></p>
+<pre><code class="language-bash">git init
+</code></pre>
+</li>
+<li>
+<p><strong>GitHubリポジトリをローカルに登録</strong></p>
+<ul>
+<li>GitHubリポジトリの「Quick setup」で表示されるURLをコピー</li>
+<li>例: <code>https://github.com/username/my-project.git</code></li>
+</ul>
+<pre><code class="language-bash">git remote add origin https://github.com/username/my-project.git
+</code></pre>
+</li>
+<li>
+<p><strong>ファイルをステージング</strong></p>
+<ul>
+<li>全てのファイルをステージに追加する場合:<pre><code class="language-bash">git add .
+</code></pre>
+</li>
+<li>特定のファイルだけを追加する場合:<pre><code class="language-bash">git add ファイル名
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>コミット</strong></p>
+<ul>
+<li>変更内容を記録します:<pre><code class="language-bash">git commit -m <span class="hljs-string">&quot;初回コミットメッセージ&quot;</span>
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>ファイルをGitHubにプッシュ</strong></p>
+<ul>
+<li>初回プッシュ時はブランチ名を指定:<pre><code class="language-bash">git branch -M main
+git push -u origin main
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="成功確認"><strong>成功確認</strong></h3>
+<ul>
+<li>GitHubのリポジトリページを開き、ローカルディレクトリ内のファイルが表示</li>
+</ul>
+<hr>
+<h3 id="今後の更新手順"><strong>今後の更新手順</strong></h3>
+<ol>
+<li>
+<p><strong>変更をステージング</strong></p>
+<pre><code class="language-bash">git add .
+</code></pre>
+</li>
+<li>
+<p><strong>変更をコミット</strong></p>
+<pre><code class="language-bash">git commit -m <span class="hljs-string">&quot;更新内容の説明&quot;</span>
+</code></pre>
+</li>
+<li>
+<p><strong>変更をプッシュ</strong></p>
+<pre><code class="language-bash">git push
+</code></pre>
+</li>
+</ol>
+<hr>
+<h3 id="注意点"><strong>注意点</strong></h3>
+<ul>
+<li><strong>.gitignore</strong> ファイルを利用して、公開したくないファイルやディレクトリを除外<br>
+例: <code>.gitignore</code> ファイルに以下を記載すると <code>node_modules</code> フォルダが無視<pre><code>node_modules/
+</code></pre>
+</li>
+</ul>
+<p>GitHubリポジトリをローカルにクローンする方法は以下の通り</p>
+<hr>
+<h3 id="githubリポジトリをローカルにクローンする手順"><strong>GitHubリポジトリをローカルにクローンする手順</strong></h3>
+<h4 id="1-リポジトリのurlを取得"><strong>1. リポジトリのURLを取得</strong></h4>
+<ol>
+<li>GitHubで対象のリポジトリを開</li>
+<li>「Code」ボタンをクリック</li>
+<li>表示されるURL（HTTPSかSSHのどちらか）をコピー
+<ul>
+<li>HTTPSの場合の例: <code>https://github.com/atsuki-ichikawa/web2.git</code></li>
+<li>SSHの場合の例: <code>git@github.com:username/repository-name.git</code></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="2-ローカルでクローン先のディレクトリに移動"><strong>2. ローカルでクローン先のディレクトリに移動</strong></h4>
+<ol>
+<li>ターミナル（コマンドプロンプトやPowerShellでも可）を開</li>
+<li>クローンしたい場所に移動<pre><code class="language-bash"><span class="hljs-built_in">cd</span> /path/to/desired/directory
+</code></pre>
+</li>
+</ol>
+<hr>
+<h4 id="3-リポジトリをクローン"><strong>3. リポジトリをクローン</strong></h4>
+<ol>
+<li>
+<p>クローンコマンドを実行</p>
+<ul>
+<li>HTTPSを使う場合:<pre><code class="language-bash">git <span class="hljs-built_in">clone</span> https://github.com/username/repository-name.git
+</code></pre>
+</li>
+<li>SSHを使う場合:<pre><code class="language-bash">git <span class="hljs-built_in">clone</span> git@github.com:username/repository-name.git
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>クローンが成功すると、指定したディレクトリ内にリポジトリの内容がダウンロード</p>
+</li>
+</ol>
+<hr>
+<h4 id="4-クローン先のディレクトリに移動"><strong>4. クローン先のディレクトリに移動</strong></h4>
+<pre><code class="language-bash"><span class="hljs-built_in">cd</span> repository-name
+</code></pre>
+<hr>
+<h4 id="5-クローンが成功したか確認"><strong>5. クローンが成功したか確認</strong></h4>
+<ol>
+<li>
+<p>ディレクトリの内容を確認</p>
+<pre><code class="language-bash"><span class="hljs-built_in">ls</span>   <span class="hljs-comment"># macOS/Linux</span>
+<span class="hljs-built_in">dir</span>  <span class="hljs-comment"># Windows</span>
+</code></pre>
+</li>
+<li>
+<p><code>.git</code>ディレクトリがあればクローンは成功</p>
+</li>
+</ol>
+<hr>
+<h3 id="補足情報"><strong>補足情報</strong></h3>
+<ul>
+<li>
+<p><strong>SSHを使いたい場合の準備</strong></p>
+<ul>
+<li>GitHubにSSHキーを設定していない場合は、以下の手順を参考にSSHキーを設定
+<ol>
+<li>ローカルでSSHキーを生成:<pre><code class="language-bash">ssh-keygen -t ed25519 -C <span class="hljs-string">&quot;your-email@example.com&quot;</span>
+</code></pre>
+</li>
+<li>公開鍵をGitHubに追加:
+<ul>
+<li>GitHubの「Settings」 → 「SSH and GPG keys」 → 「New SSH key」で公開鍵を登録。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>複数のブランチがある場合</strong></p>
+<ul>
+<li>クローンした後、別のブランチを使いたい場合は以下を実行:<pre><code class="language-bash">git checkout branch-name
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+
+            
+            
+        </body>
+        </html>

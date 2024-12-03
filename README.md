@@ -109,7 +109,7 @@ GitHubリポジトリをローカルにクローンする方法は以下の通�
 2. 「Code」ボタンをクリック
 3. 表示されるURL（HTTPSかSSHのどちらか）をコピー
    - HTTPSの場合の例: `https://github.com/atsuki-ichikawa/web2.git`
-   - SSHの場合の例: `git@github.com:username/repository-name.git`
+   - SSHの場合の例: `git@github.com:atsuki-ichikawa/web2.git`
 
 ---
 
@@ -126,11 +126,11 @@ GitHubリポジトリをローカルにクローンする方法は以下の通�
 1. クローンコマンドを実行
    - HTTPSを使う場合:
      ```bash
-     git clone https://github.com/username/repository-name.git
+     git clone https://github.com/atsuki-ichikawa/web2.git.git
      ```
    - SSHを使う場合:
      ```bash
-     git clone git@github.com:username/repository-name.git
+     git clone git@github.com:atsuki-ichikawa/web2.git
      ```
 
 2. クローンが成功すると、指定したディレクトリ内にリポジトリの内容がダウンロード
